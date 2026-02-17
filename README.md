@@ -211,14 +211,3 @@ rbx.mem.ru8(addr)         -- read u8
 rbx.mem.rf32(addr)        -- read f32
 rbx.mem.rs(addr, len)     -- read string
 ```
-
-Valid addresses are expected to be in the range `0x10000 – 0x7FFFFFFFFFFF`. Anything outside that returns `nil` safely.
-
----
-
-## Notes
-
-- **Strings** use MSVC `std::string` SSO layout — strings 15 chars or shorter are stored inline, longer ones use a heap pointer. The SDK handles both transparently.
-- **Children** are stored as `std::vector<std::shared_ptr<Instance>>` with 16-byte slots. Iteration is capped at 128 children as a safety measure.
-- **View matrix** is row-major. The projection uses rows 1, 2, and 4 for the perspective divide, matching the original C++ implementation exactly.
-- All reads are wrapped in `pcall`, so a bad address will give you `nil` rather than an error.
