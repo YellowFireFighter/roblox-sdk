@@ -6,7 +6,7 @@
 ## Getting Started
 
 ```lua
-local rbx = require("rbx")
+local rbx = require("[LUA] Roblox SDK")
 rbx.init(proc)
 ```
 
