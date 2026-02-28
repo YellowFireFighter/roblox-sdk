@@ -1,5 +1,5 @@
 # Roblox sdk
-> Lua Perception SDK for Roblox · `version-bd08027bb04e4045`
+> Lua Perception SDK for Roblox · (auto updates)
 
 ---
 
